@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APCV 2027 · Bangkok</title>
+<meta name="description" content="The 19th Asia-Pacific Conference on Vision (APCV 2027), 30 June – 2 July 2027, Bangkok, Thailand. Hosted by the Faculty of Medicine, Chulalongkorn University. The first APCV in Thailand.">
+
+<!-- Link previews (email, Slack, X, LinkedIn).
+     If the site address changes, update the two URLs below. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="19th APCV · 30 June – 2 July 2027 · Bangkok, Thailand">
+<meta property="og:description" content="The 19th Asia-Pacific Conference on Vision, and the first in Thailand. Abstract submission opens 1 January 2027.">
+<meta property="og:url" content="https://apcv2027.github.io/">
+<meta property="og:image" content="https://apcv2027.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ca6189'/%3E%3Cg stroke='%23f4e4ea' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M8 10l4 4M14 10l4 4M20 10l4 4M8 18l4 4M20 18l4 4'/%3E%3Cpath d='M18 18l-4 4' stroke='%233b3740'/%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;800&family=IBM+Plex+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Palette follows the Chulalongkorn University identity (pink + grey).
+     Values sampled from the Brand Identity Guidelines cover — swap in the official
+     hex codes from the guideline book if they differ. */
+  :root {
+    --bg: #f4e4ea;           /* Chula light pink (page) */
+    --surface: #ffffff;
+    --ink: #3b3740;          /* charcoal grey */
+    --ink-soft: #6b6570;
+    --rule: #e6ccd8;
+    --pink: #ca6189;         /* Chula pink: headings, large type, figure */
+    --accent: #a8436d;       /* deeper pink: buttons, small text (passes contrast) */
+    --accent-soft: #fbf3f6;
+    --band: #f4e4ea;
+    --band-line: #cfa3b7;
+    --band-figure: #b54d79;
+    --band-ink: #3b3740;
+    --band-ink-soft: #6b6570;
+    --btn-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1d1b20; --surface: #26232a; --ink: #eeeaf0; --ink-soft: #b3acb7;
+      --rule: #3a3540; --pink: #e48aad; --accent: #e48aad; --accent-soft: #2c2530;
+      --band: #1d1b20; --band-line: #3f3642; --band-figure: #e48aad;
+      --band-ink: #eeeaf0; --band-ink-soft: #b3acb7; --btn-ink: #1d1b20;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1d1b20; --surface: #26232a; --ink: #eeeaf0; --ink-soft: #b3acb7;
+    --rule: #3a3540; --pink: #e48aad; --accent: #e48aad; --accent-soft: #2c2530;
+    --band: #1d1b20; --band-line: #3f3642; --band-figure: #e48aad;
+    --band-ink: #eeeaf0; --band-ink-soft: #b3acb7; --btn-ink: #1d1b20;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 17px/1.6 "Fira Sans", "IBM Plex Sans Thai", system-ui, sans-serif;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--pink); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: var(--band); color: var(--band-ink); border-bottom: 1px solid var(--rule); }
+  .texture { position: relative; height: clamp(220px, 40vw, 380px); }
+  .texture canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .texture figcaption {
+    position: absolute; right: 16px; bottom: 10px;
+    font-size: 12.5px; color: var(--band-ink-soft);
+    background: var(--band); padding: 3px 8px; border-radius: 4px;
+  }
+  .hero-copy { padding-top: 32px; padding-bottom: 52px; }
+  .eyebrow {
+    font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  h1 {
+    font-family: "Fira Sans", sans-serif; font-weight: 600; color: var(--pink);
+    font-size: clamp(34px, 6vw, 60px); line-height: 1.06; letter-spacing: -.01em;
+    margin: 0 0 18px; text-wrap: balance;
+  }
+  .when { font-size: clamp(19px, 2.6vw, 24px); font-weight: 500; margin: 0 0 6px; }
+  .where { color: var(--band-ink-soft); margin: 0 0 24px; }
+  .where .th { font-family: "IBM Plex Sans Thai", sans-serif; }
+  .first {
+    display: inline-block; font-size: 14px; font-weight: 600;
+    border: 1px solid var(--pink); color: var(--accent); background: var(--surface);
+    padding: 4px 12px; border-radius: 999px; margin: 0 0 26px;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 500 15px/1 "Fira Sans", sans-serif;
+    padding: 13px 18px; border-radius: 8px; cursor: pointer;
+    text-decoration: none; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: var(--btn-ink); }
+  .btn-primary:hover { background: var(--pink); color: var(--btn-ink); }
+  .btn-ghost { background: var(--surface); color: var(--accent); border-color: var(--rule); }
+  .btn-ghost:hover { border-color: var(--pink); color: var(--accent); }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+  h2 {
+    font-family: "Fira Sans", sans-serif; font-weight: 600; color: var(--pink);
+    font-size: clamp(25px, 3.4vw, 32px); line-height: 1.15; margin: 0 0 18px;
+  }
+  .lede { font-size: 19px; max-width: 46em; margin: 0 0 20px; }
+  p { max-width: 46em; }
+  .muted { color: var(--ink-soft); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 22px 0 0; list-style: none; }
+  .chips li {
+    font-size: 14.5px; padding: 6px 12px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--rule);
+  }
+
+  .dates { list-style: none; padding: 0; margin: 8px 0 0; display: grid; }
+  .dates li {
+    display: grid; grid-template-columns: minmax(150px, 230px) 1fr; gap: 6px 24px;
+    padding: 18px 0; border-top: 1px solid var(--rule);
+  }
+  .dates li:last-child { border-bottom: 1px solid var(--rule); }
+  .dates .d { font-weight: 600; }
+  .dates .highlight .d { color: var(--accent); }
+  .timing {
+    margin-top: 26px; padding: 18px 20px; border-radius: 10px;
+    background: var(--surface); border-left: 4px solid var(--pink); max-width: none;
+  }
+  .timing strong { display: block; margin-bottom: 4px; color: var(--accent); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 22px 24px; }
+  .card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+  .soon { list-style: none; padding: 0; margin: 0; }
+  .soon li { padding: 9px 0; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .soon li > em { font-style: normal; display: flex; align-items: baseline; }
+  .soon li:first-child { border-top: 0; padding-top: 0; }
+  .soon span { color: var(--ink-soft); font-size: 14.5px; white-space: nowrap; }
+
+  .contact-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+  .btn-line { border-color: var(--rule); background: var(--surface); color: var(--accent); }
+  .btn-line:hover { border-color: var(--pink); }
+
+  footer { padding: 36px 0 48px; color: var(--ink-soft); font-size: 14.5px; }
+  footer p { margin: 0 0 4px; }
+
+  /* Bullet: an original, simplified ประจำยาม (four-petal Thai flower) mark */
+  :root { --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 7.9C8.2 7.5 7.3 5.6 8.1 3.9C8.6 2.8 9.4 2 10 1.3C10.6 2 11.4 2.8 11.9 3.9C12.7 5.6 11.8 7.5 10 7.9Z'/%3E%3Cpath transform='rotate%2890 10 10%29' d='M10 7.9C8.2 7.5 7.3 5.6 8.1 3.9C8.6 2.8 9.4 2 10 1.3C10.6 2 11.4 2.8 11.9 3.9C12.7 5.6 11.8 7.5 10 7.9Z'/%3E%3Cpath transform='rotate%28180 10 10%29' d='M10 7.9C8.2 7.5 7.3 5.6 8.1 3.9C8.6 2.8 9.4 2 10 1.3C10.6 2 11.4 2.8 11.9 3.9C12.7 5.6 11.8 7.5 10 7.9Z'/%3E%3Cpath transform='rotate%28270 10 10%29' d='M10 7.9C8.2 7.5 7.3 5.6 8.1 3.9C8.6 2.8 9.4 2 10 1.3C10.6 2 11.4 2.8 11.9 3.9C12.7 5.6 11.8 7.5 10 7.9Z'/%3E%3Ccircle cx='10' cy='10' r='1.3'/%3E%3C/svg%3E"); }
+  .motif::before {
+    content: ""; display: inline-block; flex: none;
+    width: 13px; height: 13px; margin-right: 10px; vertical-align: -1px;
+    background: var(--pink); opacity: .85;
+    -webkit-mask: var(--motif) center / contain no-repeat;
+            mask: var(--motif) center / contain no-repeat;
+  }
+
+
+
+  .fees { margin-top: 28px; }
+  .fees h3 { margin: 0 0 4px; font-size: 18px; font-weight: 600; color: var(--pink); }
+  .fees p { margin: 0 0 14px; }
+  .fees table { border-collapse: collapse; width: 100%; max-width: 560px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .fees th, .fees td { text-align: left; padding: 12px 16px; border-top: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
+  .fees thead th { border-top: 0; font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+  .fees tbody th { font-weight: 600; }
+  .fees td span { display: block; font-size: 13.5px; color: var(--ink-soft); }
+
+  /* Getting there */
+  .map {
+    position: relative; aspect-ratio: 16 / 9; width: 100%;
+    border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
+    background: var(--surface); margin: 0 0 12px;
+  }
+  .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .map-link { font-size: 15px; margin: 0 0 26px; }
+  .steps { list-style: none; padding: 0; margin: 0; }
+  .steps li { padding: 8px 0; border-top: 1px solid var(--rule); display: flex; align-items: baseline; }
+  .steps li:first-child { border-top: 0; padding-top: 0; }
+  .steps li > div { flex: 1; }
+  .steps b { font-weight: 600; }
+  @media (max-width: 720px) { .map { aspect-ratio: 4 / 3; } }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 0 16px; }
+    section { padding: 42px 0; }
+    .two { grid-template-columns: 1fr; }
+    .dates li { grid-template-columns: 1fr; gap: 2px; }
+    .texture figcaption { right: 8px; left: 8px; text-align: center; font-size: 12px; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <figure class="texture" style="margin:0">
+    <canvas id="texture" aria-hidden="true"></canvas>
+    <figcaption>Can you see the year before it lights up? It's drawn with line orientation alone.</figcaption>
+  </figure>
+
+  <div class="wrap hero-copy">
+    <p class="eyebrow">Save the date · The 19th APCV</p>
+    <h1>Asia-Pacific Conference on Vision 2027</h1>
+    <p class="when">Wednesday 30 June – Friday 2 July 2027</p>
+    <p class="where">Bangkok, Thailand <span class="th">· กรุงเทพฯ</span> · Hosted by the Faculty of Medicine, Chulalongkorn University</p>
+    <span class="first">The first APCV in Thailand</span>
+    <div class="actions">
+      <button class="btn btn-primary" id="ics" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Add to calendar (.ics)
+      </button>
+      <a class="btn btn-ghost" id="gcal" target="_blank" rel="noopener">Google Calendar</a>
+      <a class="btn btn-ghost" href="mailto:apcv.2027@gmail.com?subject=Please%20add%20me%20to%20the%20APCV%202027%20mailing%20list">Join the mailing list</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">Since 2001, APCV has brought together researchers across vision science from the Asia-Pacific region and beyond. The 19th meeting comes to Bangkok in 2027. We especially welcome students and early-career researchers.</p>
+    <p>Beyond talks and posters, APCV 2027 will feature hands-on workshops, a dedicated early-career program, and social events in the heart of Bangkok.</p>
+    <ul class="chips" aria-label="Topics">
+      <li>Perception</li><li>Attention</li><li>Visual cognition</li>
+      <li>Computational neuroscience</li><li>Cognitive neuroscience</li>
+      <li>Eye movements</li><li>Color</li><li>Clinical vision</li>
+    </ul>
+  </section>
+
+  <section id="dates">
+    <h2>Key dates</h2>
+    <ul class="dates">
+      <li><span class="d motif">1 January 2027</span><span>Abstract submission opens</span></li>
+      <li><span class="d motif">28 February 2027</span><span>Abstract submission closes</span></li>
+      <li><span class="d motif">By end of March 2027</span><span>Notification of acceptance, in time for travel funding and booking</span></li>
+      <li class="highlight"><span class="d motif">30 June – 2 July 2027</span><span>APCV 2027, Bangkok</span></li>
+    </ul>
+    <p class="timing"><strong>Why the timing works</strong>APCV 2027 comes after the spring meeting season (VSS in Seattle, 21–25 May) and falls in the northern summer and Australasian mid-year breaks: a chance to bring your latest work to the Asia-Pacific community, with time for real conversation.</p>
+    <div class="fees">
+      <h3>Registration fees</h3>
+      <p class="muted">In line with recent APCVs. Maximum fees, for planning; final fees will be confirmed when registration opens. US dollar amounts are approximate.</p>
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">Early-bird</th><th scope="col">Standard</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Academic</th><td>฿9,500 <span>≈ US$290</span></td><td>฿12,000 <span>≈ US$360</span></td></tr>
+          <tr><th scope="row">Student</th><td>฿5,500 <span>≈ US$165</span></td><td>฿7,000 <span>≈ US$210</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="venue">
+    <h2>Venue &amp; what's next</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Rattanawithayapat Building</h3>
+        <p>Conference hall, 3rd floor · King Chulalongkorn Memorial Hospital, Faculty of Medicine, Chulalongkorn University, on Rama IV Road in central Bangkok, opposite Lumphini Park.</p>
+        <p class="muted">Easy access from both international airports (Suvarnabhumi and Don Mueang) and a short walk from MRT Si Lom and BTS Sala Daeng stations. Bangkok's food, temples and night markets are close by.</p>
+      </div>
+      <div class="card">
+        <h3>Details coming in the next months</h3>
+        <ul class="soon">
+          <li><em class="motif">Keynote speakers</em> <span>to be announced</span></li>
+          <li><em class="motif">Abstract submission portal</em> <span>opens 1 Jan 2027</span></li>
+          <li><em class="motif">Registration</em> <span>coming soon</span></li>
+          <li><em class="motif">Travel grants</em> <span>coming soon</span></li>
+          <li><em class="motif">Accommodation</em> <span>coming soon</span></li>
+          <li><em class="motif">Visa support letters</em> <span>on request</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZING COMMITTEE — uncomment and fill in once everyone has agreed to be listed
+  <section id="committee">
+    <h2>Organizing committee</h2>
+    <p>Name (Affiliation) · Name (Affiliation) · …</p>
+  </section>
+  -->
+
+  <section id="contact">
+    <h2>Stay in touch</h2>
+    <p>We're sending this early so you can plan travel and apply for funding. To receive announcements, or to request a visa invitation letter, email us.</p>
+    <div class="contact-row">
+      <a class="btn btn-line" href="mailto:apcv.2027@gmail.com">apcv.2027@gmail.com</a>
+    </div>
+  </section>
+
+  <section id="getting-there">
+    <h2>Getting there</h2>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=13.7323883,100.5354897&z=17&output=embed" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        title="Map of the Rattanawithayapat Building, King Chulalongkorn Memorial Hospital, Bangkok"></iframe>
+    </div>
+    <p class="map-link"><a href="https://maps.app.goo.gl/GbRz4FAsTUL8af396" target="_blank" rel="noopener">Open in Google Maps</a> · Rattanawithayapat Building, King Chulalongkorn Memorial Hospital</p>
+
+    <div class="two">
+      <div class="card">
+        <h3>From the airports</h3>
+        <ul class="steps">
+          <li class="motif"><div><b>Suvarnabhumi (BKK):</b> Airport Rail Link into the city, then change to the MRT Blue Line at Makkasan/Phetchaburi for Si Lom, or to the BTS at Phaya Thai for Sala Daeng.</div></li>
+          <li class="motif"><div><b>Don Mueang (DMK):</b> SRT Red Line to Krung Thep Aphiwat, then MRT Blue Line to Si Lom.</div></li>
+          <li class="motif"><div><b>Taxi:</b> available at both airports. Allow extra time for Bangkok traffic, especially at rush hour.</div></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Where to stay</h3>
+        <p>Conference hotel rates will be announced with registration. In the meantime, these areas have many hotels at every budget:</p>
+        <ul class="steps">
+          <li class="motif"><div><b>Silom &amp; Sala Daeng:</b> walking distance to the venue</div></li>
+          <li class="motif"><div><b>Sathorn:</b> a short ride south</div></li>
+          <li class="motif"><div><b>Siam &amp; Pathum Wan:</b> a few BTS stops away</div></li>
+          <li class="motif"><div><b>Sukhumvit:</b> on the BTS and MRT lines</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>APCV 2027 · Hosted by the Faculty of Medicine, Chulalongkorn University, Bangkok</p>
+    <p>Conference Chair: Chaipat Chunharas</p>
+    <p>Part of the <a href="https://sites.google.com/view/apcv-portal" target="_blank" rel="noopener">Asia-Pacific Conference on Vision series</a></p>
+    <p>Last updated 12 November 2026</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- Texture-segregation hero ----------
+   The year is defined by line orientation alone (45° background, 135° figure).
+   After a short pause the figure lines light up, revealing what was already there. */
+(function () {
+  const canvas = document.getElementById('texture');
+  const WORD = '2027';
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let segs = [], lit = reduce ? 1 : 0, started = false, W = 0, H = 0;
+
+  function build() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return false;
+    W = w; H = h;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    canvas.getContext('2d').setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const m = document.createElement('canvas');
+    m.width = w; m.height = h;
+    const mc = m.getContext('2d');
+    const size = Math.min(h * 0.78, w * 0.3);
+    mc.font = '800 ' + size + 'px "Fira Sans", "Arial Black", sans-serif';
+    mc.textAlign = 'center';
+    mc.textBaseline = 'middle';
+    mc.fillText(WORD, w / 2, h / 2 + size * 0.04);
+    const data = mc.getImageData(0, 0, w, h).data;
+
+    const step = w < 600 ? 9 : 12, len = step * 0.62, base = Math.PI / 4;
+    let seed = 7;
+    const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    segs = [];
+    for (let y = step / 2; y < h; y += step) {
+      for (let x = step / 2; x < w; x += step) {
+        const ix = Math.min(w - 1, Math.round(x)), iy = Math.min(h - 1, Math.round(y));
+        const inside = data[(iy * w + ix) * 4 + 3] > 128;
+        const a = (inside ? base + Math.PI / 2 : base) + (rand() - 0.5) * 0.35;
+        const dx = Math.cos(a) * len / 2, dy = Math.sin(a) * len / 2;
+        segs.push([x - dx, y - dy, x + dx, y + dy, inside]);
+      }
+    }
+    return true;
+  }
+
+  function paint() {
+    const ctx = canvas.getContext('2d');
+    const css = getComputedStyle(document.documentElement);
+    const lineCol = css.getPropertyValue('--band-line').trim();
+    const figCol = css.getPropertyValue('--band-figure').trim();
+    ctx.clearRect(0, 0, W, H);
+    ctx.lineCap = 'round';
+    ctx.lineWidth = W < 600 ? 1.5 : 1.8;
+
+    // Pass 1: every line in the same neutral colour (orientation only).
+    // As the figure lights up, the background recedes so the year reads clearly.
+    ctx.strokeStyle = lineCol;
+    ctx.globalAlpha = 1 - 0.5 * lit;
+    ctx.beginPath();
+    for (const s of segs) if (!s[4]) { ctx.moveTo(s[0], s[1]); ctx.lineTo(s[2], s[3]); }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    if (lit < 1) {
+      ctx.beginPath();
+      for (const s of segs) if (s[4]) { ctx.moveTo(s[0], s[1]); ctx.lineTo(s[2], s[3]); }
+      ctx.stroke();
+    }
+
+    // Pass 2: figure lines light up
+    if (lit > 0) {
+      ctx.globalAlpha = lit;
+      ctx.strokeStyle = figCol;
+      ctx.lineWidth = W < 600 ? 2.2 : 2.7;
+      ctx.beginPath();
+      for (const s of segs) if (s[4]) { ctx.moveTo(s[0], s[1]); ctx.lineTo(s[2], s[3]); }
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function reveal() {
+    if (started || reduce) return;
+    started = true;
+    setTimeout(() => {
+      const t0 = performance.now(), dur = 1400;
+      (function tick(now) {
+        const p = Math.min(1, (now - t0) / dur);
+        lit = 1 - Math.pow(1 - p, 3);
+        paint();
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    }, 2600);
+  }
+
+  function render() { if (build()) { paint(); reveal(); } }
+
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(render, 120); });
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(render);
+  render();
+})();
+
+/* ---------- Calendar links ---------- */
+(function () {
+  const TITLE = 'APCV 2027 – 19th Asia-Pacific Conference on Vision';
+  const LOCATION = 'King Chulalongkorn Memorial Hospital, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand';
+  const DESC = 'The 19th APCV, and the first in Thailand. Abstract submission 1 Jan – 28 Feb 2027. ' + location.href.split('#')[0];
+
+  const gcal = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(TITLE)
+    + '&dates=20270630/20270703'
+    + '&location=' + encodeURIComponent(LOCATION)
+    + '&details=' + encodeURIComponent(DESC);
+  document.getElementById('gcal').href = gcal;
+
+  const esc = s => s.replace(/[\\,;]/g, m => '\\' + m);
+  function event(uid, start, end, summary, desc) {
+    return [
+      'BEGIN:VEVENT',
+      'UID:' + uid + '@apcv2027',
+      'DTSTAMP:20261112T000000Z',
+      'DTSTART;VALUE=DATE:' + start,
+      'DTEND;VALUE=DATE:' + end,
+      'SUMMARY:' + esc(summary),
+      'LOCATION:' + esc(LOCATION),
+      'DESCRIPTION:' + esc(desc),
+      'END:VEVENT'
+    ].join('\r\n');
+  }
+
+  document.getElementById('ics').addEventListener('click', () => {
+    const ics = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//APCV 2027//Save the date//EN', 'CALSCALE:GREGORIAN',
+      event('conference', '20270630', '20270703', TITLE, DESC),
+      event('abstract-deadline', '20270228', '20270301', 'APCV 2027 abstract deadline', 'Abstract submission for APCV 2027 closes today.'),
+      'END:VCALENDAR'
+    ].join('\r\n');
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'APCV2027.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+})();
+</script>
+</body>
+</html>
